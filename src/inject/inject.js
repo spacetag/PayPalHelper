@@ -1,0 +1,11 @@
+chrome.extension.sendMessage({}, function(response) {
+	var readyStateCheckInterval = setInterval(function() {
+	if (document.readyState === "complete") {
+		clearInterval(readyStateCheckInterval);
+
+		purchaseProtectionCheckbox = document.getElementById('purchaseProtectionCheckbox');
+		if (purchaseProtectionCheckbox)
+			purchaseProtectionCheckbox.click();
+	}
+	}, 10);
+});
