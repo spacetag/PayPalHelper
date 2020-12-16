@@ -4,7 +4,7 @@ chrome.extension.sendMessage({}, function(response) {
 		clearInterval(readyStateCheckInterval);
 
 		purchaseProtectionCheckbox = document.getElementById('purchaseProtectionCheckbox');
-		if (purchaseProtectionCheckbox)
+		if (purchaseProtectionCheckbox && purchaseProtectionCheckbox.checked)
 			purchaseProtectionCheckbox.click();
 	}
 	}, 10);
